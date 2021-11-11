@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\twith\\workspace\\HelloWorld\\HelloWorld.csproj": {}
+    "C:\\Users\\twith\\workspace\\PlayersGuideCSharp\\HelloWorld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\twith\\workspace\\HelloWorld\\HelloWorld.csproj": {
+    "C:\\Users\\twith\\workspace\\PlayersGuideCSharp\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\twith\\workspace\\HelloWorld\\HelloWorld.csproj",
+        "projectUniqueName": "C:\\Users\\twith\\workspace\\PlayersGuideCSharp\\HelloWorld.csproj",
         "projectName": "HelloWorld",
-        "projectPath": "C:\\Users\\twith\\workspace\\HelloWorld\\HelloWorld.csproj",
+        "projectPath": "C:\\Users\\twith\\workspace\\PlayersGuideCSharp\\HelloWorld.csproj",
         "packagesPath": "C:\\Users\\twith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\twith\\workspace\\HelloWorld\\obj\\",
+        "outputPath": "C:\\Users\\twith\\workspace\\PlayersGuideCSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\twith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "LanguageExt.Core": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
