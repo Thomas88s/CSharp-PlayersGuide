@@ -8,36 +8,36 @@
 
 //int pilotNumb = Convert.ToInt32(Console.ReadLine());
 
-//    Console.Clear();
+//Console.Clear();
 
-//    Console.Write(secondQuestion);
-//    int hunterNumb = Convert.ToInt32(Console.ReadLine());
+//Console.Write(secondQuestion);
+//int hunterNumb = Convert.ToInt32(Console.ReadLine());
 
 //while (hunterNumb != pilotNumb)
 //{
 //    if (hunterNumb < pilotNumb)
 //    {
-//    Console.WriteLine("Hunter number is too low");
-//    Console.Write(secondQuestion);
-//    hunterNumb = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("Hunter number is too low");
+//        Console.Write(secondQuestion);
+//        hunterNumb = Convert.ToInt32(Console.ReadLine());
 //    }
 //    else if (hunterNumb > pilotNumb)
 //    {
-//    Console.WriteLine("Hunter number is too high");
-//    Console.Write(secondQuestion);
-//    hunterNumb = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("Hunter number is too high");
+//        Console.Write(secondQuestion);
+//        hunterNumb = Convert.ToInt32(Console.ReadLine());
 //    }
 //    else
 //    {
-//    break;
+//        break;
 //    }
 
 //}
-// Console.WriteLine("The hunter's number matches the pilot's number. Correct.");
+//Console.WriteLine("The hunter's number matches the pilot's number. Correct.");
 
 
 
-   
+
 
 
 
