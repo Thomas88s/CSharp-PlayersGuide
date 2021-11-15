@@ -1,39 +1,48 @@
-﻿//using System;
+﻿using System;
+
+int number1 = AskForNumber("Please enter a number between 0 and 100, Pilot: ");
+int number2 = AskForNumber("Please enter a number between 0 and 100, Hunter: ");
+
+int pilotNumb = number1;
+int hunterNumb = number2;
 
 
-//string initialQuestion = "Please enter a number between 0 and 100, Pilot: ";
-//string secondQuestion = "Please enter a number between 0 and 100, Hunter: ";
+int AskForNumber(string text)
+{
+    Console.Write(text + " ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    return number;
+}
 
-//Console.Write(initialQuestion);
+Console.Write(number1);
 
-//int pilotNumb = Convert.ToInt32(Console.ReadLine());
 
-//Console.Clear();
+Console.Clear();
 
-//Console.Write(secondQuestion);
-//int hunterNumb = Convert.ToInt32(Console.ReadLine());
+Console.Write(number2);
 
-//while (hunterNumb != pilotNumb)
-//{
-//    if (hunterNumb < pilotNumb)
-//    {
-//        Console.WriteLine("Hunter number is too low");
-//        Console.Write(secondQuestion);
-//        hunterNumb = Convert.ToInt32(Console.ReadLine());
-//    }
-//    else if (hunterNumb > pilotNumb)
-//    {
-//        Console.WriteLine("Hunter number is too high");
-//        Console.Write(secondQuestion);
-//        hunterNumb = Convert.ToInt32(Console.ReadLine());
-//    }
-//    else
-//    {
-//        break;
-//    }
 
-//}
-//Console.WriteLine("The hunter's number matches the pilot's number. Correct.");
+while (hunterNumb != pilotNumb)
+{
+
+    if (hunterNumb < pilotNumb)
+    {
+        Console.WriteLine("Hunter number is too low. Please try again. ");    
+        hunterNumb = Convert.ToInt32(Console.ReadLine());
+        
+    }
+    else if (hunterNumb > pilotNumb)
+    {
+        Console.WriteLine("Hunter number is too high. Please try again. ");
+        hunterNumb = Convert.ToInt32(Console.ReadLine());
+    }
+    else
+    {
+        break;
+    }
+
+}
+Console.WriteLine("The hunter's number matches the pilot's number. Correct.");
 
 
 
