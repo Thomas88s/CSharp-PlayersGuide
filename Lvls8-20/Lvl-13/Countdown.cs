@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 //for (int x = 10; x > 0; x--)
 //    Console.WriteLine(x);
 //int number = 10;

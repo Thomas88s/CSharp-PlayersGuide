@@ -29,7 +29,7 @@
 //    {
 //        Console.WriteLine("Hunter number is too low. Please try again. ");    
 //        hunterNumb = Convert.ToInt32(Console.ReadLine());
-        
+
 //    }
 //    else if (hunterNumb > pilotNumb)
 //    {
