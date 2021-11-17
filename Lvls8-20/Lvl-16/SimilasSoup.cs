@@ -1,37 +1,60 @@
-﻿
-using System;
+﻿using System;
 
-Console.Write(@"Choose a type of soup: Soup, Stew, or gumbo. ");
-string chosenType = Console.ReadLine();
+(SoupType type, MainIngredient ingredient, Seasoning seasoning)[] soups = new (SoupType, MainIngredient, Seasoning)[3];
+for (int index = 0; index < soups.Length; index++)
+    soups[index] = GetSoup();
 
+foreach (var soup in soups)
+    Console.WriteLine($"{soup.seasoning} {soup.ingredient} {soup.type}");
 
-
-Console.Write("Now, choose the main ingredient: mushrooms, chicken, carrots, or potatoes. ");
-string chosenIngredient = Console.ReadLine();
-
-Console.WriteLine("Finally, choose a seasoning: spicy, salty, or sweet. ");
-string chosenSeasoning = Console.ReadLine();
-
-
-
-
-
-
-
-Console.WriteLine($"{}");
-
-
-
-
-
-
-
-class Soup
-
+(SoupType, MainIngredient, Seasoning) GetSoup()
 {
-    enum Type { soup, stew, gumbo }
-    enum Ingredient { mushrooms, chicken, carrots, potatoes }
-    enum Seasoning { spicy, salty, sweet }
+    SoupType type = GetSoupType();
+    MainIngredient ingredient = GetMainIngredient();
+    Seasoning seasoning = GetSeasoning();
+    return (type, ingredient, seasoning);
+}
 
-    public string[] soup = new string[3];
-};
+SoupType GetSoupType()
+{
+    Console.Write("Soup type (soup, stew, gumbo): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "soup" => SoupType.Soup,
+        "stew" => SoupType.Stew,
+        "gumbo" => SoupType.Gumbo,
+        _ => throw new NotImplementedException()
+    };
+}
+
+MainIngredient GetMainIngredient()
+{
+    Console.Write("Main ingredient (mushroom, chicken, carrot, potato): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "mushroom" => MainIngredient.Mushroom,
+        "chicken" => MainIngredient.Chicken,
+        "carrot" => MainIngredient.Carrot,
+        "potato" => MainIngredient.Potato,
+        _ => throw new NotImplementedException()
+    };
+}
+
+Seasoning GetSeasoning()
+{
+    Console.Write("Seasoning (spicy, salty, sweet): ");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "spicy" => Seasoning.Spicy,
+        "salty" => Seasoning.Salty,
+        "sweet" => Seasoning.Sweet,
+        _ => throw new NotImplementedException()
+    };
+}
+
+enum SoupType { Soup, Stew, Gumbo }
+enum MainIngredient { Mushroom, Chicken, Carrot, Potato }
+enum Seasoning { Spicy, Salty, Sweet }
