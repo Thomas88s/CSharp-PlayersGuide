@@ -1,7 +1,7 @@
 ﻿using System;
 
 Arrow arrow = GetArrow();
-Console.WriteLine(@$"Your Arrow | head: {arrow._arrowhead} | fletching: {arrow._fletching} | length: {arrow._length}
+Console.WriteLine(@$"Your Arrow | head: {arrow.Arrowhead} | fletching: {arrow.Fletching} | length: {arrow.Length}
                      cost: {arrow.GetCost()}");
 
 Arrow GetArrow()
@@ -55,23 +55,20 @@ float GetLength()
 
 class Arrow
 {
-    private Arrowhead _arrowhead;
-    private Fletching _fletching;
-    private float _length;
 
-    public Arrowhead GetArrowhead() => _arrowhead;
-    public Fletching GetFletching() => _fletching;
-    public float GetLength() => _length;
-    private Arrow(Arrowhead arrowhead, Fletching fletching, float length)
+    public Arrowhead Arrowhead { get; }
+    public Fletching Fletching { get; }
+    public float Length { get; }
+    public Arrow(Arrowhead arrowhead, Fletching fletching, float length)
     {
-        _arrowhead = arrowhead;
-        _fletching = fletching;
-        _length = length;
+        Arrowhead = arrowhead;
+        Fletching = fletching;
+        Length = length;
     }
 
     public float GetCost()
     {
-        float arrowheadCost = _arrowhead switch
+        float arrowheadCost = Arrowhead switch
         {
             Arrowhead.steel => 10,
             Arrowhead.wood => 3,
@@ -79,7 +76,7 @@ class Arrow
             _ => throw new NotImplementedException()
         };
 
-        float fletchingCost = _fletching switch
+        float fletchingCost = Fletching switch
         {
             Fletching.plastic => 10,
             Fletching.turkeyFeathers => 5,
@@ -87,7 +84,7 @@ class Arrow
             _ => throw new NotImplementedException()
         };
 
-        float shaftCost = 0.05f * _length;
+        float shaftCost = 0.05f * Length;
 
         return arrowheadCost + fletchingCost + shaftCost;
     }
