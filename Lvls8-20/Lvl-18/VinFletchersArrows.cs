@@ -55,30 +55,36 @@ float GetLength()
 
 class Arrow
 {
-    public Arrowhead _arrowhead;
-    public Fletching _fletching;
-    public float _length;
+    private Arrowhead _arrowhead;
+    private Fletching _fletching;
+    private float _length;
 
-    public Arrow(Arrowhead arrowhead, Fletching fletching, float length)
+    public Arrowhead GetArrowhead() => _arrowhead;
+    public Fletching GetFletching() => _fletching;
+    public float GetLength() => _length;
+    private Arrow(Arrowhead arrowhead, Fletching fletching, float length)
     {
         _arrowhead = arrowhead;
         _fletching = fletching;
         _length = length;
     }
+
     public float GetCost()
     {
         float arrowheadCost = _arrowhead switch
         {
             Arrowhead.steel => 10,
             Arrowhead.wood => 3,
-            Arrowhead.obsidian => 5
+            Arrowhead.obsidian => 5,
+            _ => throw new NotImplementedException()
         };
 
         float fletchingCost = _fletching switch
         {
             Fletching.plastic => 10,
             Fletching.turkeyFeathers => 5,
-            Fletching.gooseFeathers => 3
+            Fletching.gooseFeathers => 3,
+            _ => throw new NotImplementedException()
         };
 
         float shaftCost = 0.05f * _length;
