@@ -1,8 +1,37 @@
 ﻿using System;
 
-Arrow arrow = GetArrow();
-Console.WriteLine(@$"Your Arrow | head: {arrow.Arrowhead} | fletching: {arrow.Fletching} | length: {arrow.Length}
+
+Console.WriteLine("Welcome to the Arrow Shop!");
+
+Arrow GetType()
+{
+    Console.WriteLine("Arrow type (Elite, Beginner, Marksman, Custom)");
+    string input = Console.ReadLine();
+    return input switch
+    {
+        "Elite" => Arrow.CreateEliteArrow(),
+        "Beginner" => Arrow.CreateBeginnerArrow(),
+        "Marksman" => Arrow.CreateMarksmanArrow(),
+        "Custom" => GetArrow(),
+        _ => throw new NotImplementedException()
+    };
+
+}
+
+Arrow arrow = GetType();
+
+if (arrow != null)
+{
+    Console.WriteLine(@$"Your Arrow | head: {arrow.Arrowhead} | fletching: {arrow.Fletching} | length: {arrow.Length}
                      cost: {arrow.GetCost()}");
+}
+else
+{
+
+    GetArrow();
+
+}
+
 
 Arrow GetArrow()
 {
@@ -11,6 +40,7 @@ Arrow GetArrow()
     float length = GetLength();
     return new Arrow(arrowheadType, fletchingType, length);
 }
+
 
 
 Arrowhead GetArrowheadType()
@@ -56,9 +86,29 @@ float GetLength()
 class Arrow
 {
 
-    public Arrowhead Arrowhead { get; }
-    public Fletching Fletching { get; }
-    public float Length { get; }
+    public Arrowhead Arrowhead { get; private set; }
+    public Fletching Fletching { get; private set; }
+    public float Length { get; private set; }
+
+
+
+    public static Arrow CreateEliteArrow()
+    {
+
+        return new Arrow(Arrowhead.steel, Fletching.plastic, 95) { };
+
+    }
+
+    public static Arrow CreateBeginnerArrow()
+    {
+
+        return new Arrow(Arrowhead.wood, Fletching.gooseFeathers, 75) { };
+    }
+
+    public static Arrow CreateMarksmanArrow()
+    {
+        return new Arrow(Arrowhead.steel, Fletching.gooseFeathers, 65) { };
+    }
     public Arrow(Arrowhead arrowhead, Fletching fletching, float length)
     {
         Arrowhead = arrowhead;
